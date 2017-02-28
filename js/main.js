@@ -8,6 +8,7 @@ document.getElementById('add').addEventListener('click', function() {
   var value = document.getElementById('item').value;
   if (value) {
     addItemTodo(value);
+    document.getElementById('item').value = '';
   }
 });
 
@@ -33,5 +34,5 @@ function addItemTodo(text) {
   buttons.appendChild(complete);
   item.appendChild(buttons);
 
-  list.appendChild(item);
+  list.insertBefore(item, list.childNodes[0]);
 }
